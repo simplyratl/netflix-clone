@@ -1,0 +1,156 @@
+@use '../breakpoints/breakpoints.scss' as *;
+
+.list-section-container {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //  padding: 0 40px;
+    border-top: 10px solid #222222;
+
+    .list-section-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1350px;
+
+        &.reverse {
+            flex-direction: row-reverse;
+        }
+
+        @include breakpoint-down(medium-small) {
+            margin-top: 24px;
+            flex-direction: column !important;
+        }
+
+        .left-side {
+            font-size: 1.8rem;
+            max-width: 40%;
+
+            @include breakpoint-down(medium-small) {
+                max-width: 90%;
+                text-align: center;
+
+                h4 {
+                    font-size: 1.2rem;
+                }
+
+                h2 {
+                    font-size: 2rem;
+                }
+            }
+
+            @include breakpoint-down(small) {
+                font-size: 1.4rem;
+            }
+
+            h2 {
+                font-size: 3rem;
+            }
+
+            h4 {
+                font-size: 1.6rem;
+                margin-top: 14px;
+                font-weight: 400;
+            }
+        }
+
+        .picture {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            left: 0 !important;
+
+            img {
+                position: relative;
+                top: 0;
+                right: 0;
+                width: 520px;
+                z-index: 2;
+
+                @include breakpoint-down(medium-small) {
+                    width: 90%;
+                }
+            }
+
+            video {
+                position: absolute;
+                left: 70px;
+                top: 80px;
+                z-index: 1;
+                width: 75%;
+
+                &.apple {
+                    width: 61%;
+                    top: 10%;
+                    left: 100px;
+
+                    @include breakpoint-down(medium-small) {
+                        width: 56%;
+                        left: 21%;
+                    }
+                }
+
+                @include breakpoint-down(medium-small) {
+                    left: 16%;
+                    top: 20%;
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
+
+.stranger-things {
+    position: absolute;
+    left: 80px;
+    top: 240px;
+    background-color: #000;
+    border: 3px solid #222222;
+    z-index: 2;
+    border-radius: 6px;
+    width: 340px;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+
+    @media screen and (max-width: 1200px) {
+        width: 51%;
+        left: 24%;
+    }
+
+    @include breakpoint-down(medium-small) {
+        width: 70%;
+        left: 14%;
+        top: 60%;
+
+        .icon {
+            margin-left: 30% !important;
+        }
+    }
+
+    @media screen and (max-width: 430px) {
+        display: none;
+    }
+
+    img {
+        margin-right: 24px;
+        width: 50px !important;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    span {
+        color: #0071eb;
+        font-size: 0.8rem;
+    }
+
+    .icon {
+        margin-left: 70px;
+        width: 24px;
+        height: 24px;
+    }
+}
